@@ -1,0 +1,23 @@
+{
+  "name": "back-stag",
+  "version": "1.0.0",
+  "description": "后台管理",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zq320/back-stag.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zq320/back-stag/issues"
+  },
+  "homepage": "https://github.com/zq320/back-stag#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "umi-plugin-react": "^1.14.10"
+  }
+}
