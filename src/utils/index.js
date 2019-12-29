@@ -1,6 +1,6 @@
 import axios from 'axios';
 const baseUrl = "http://api.cat-shop.penkuoer.com";
-axios.defaults.headers.common['authorization'] = "Bearer " + localStorage.getItem('token')
+axios.defaults.headers.common['authorization'] = "Bearer " + localStorage.getItem('token');
 export const GET = (url,params)=>{
     return axios.get(`${baseUrl}${url}`,{params:params})
     .then((data) => {

@@ -15,14 +15,11 @@ import {connect} from "dva"
   };
     return (
         <div className = {loginSty.loginBg}>
-
-
-
         <Form className={loginSty.loginForm}>
         <Form.Item>
             <Input
-              prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} 
-              />} className= {loginSty.loginInputName } 
+              prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }}
+              />} className= {loginSty.loginInputName }
               placeholder="请输入登录名"
               onChange ={(e)=>{
                  props.dispatch({
@@ -46,7 +43,7 @@ import {connect} from "dva"
                   payload:{
                     password:e.target.value
                   }
-                }                 
+                }
                 )
               }}
             />,
@@ -63,11 +60,11 @@ import {connect} from "dva"
             payload:{
               userName:props.userName,
               password:props.password
-            }   
+            }
             });
           }
         }
-          
+
           >
             登录
           </Button>
@@ -76,7 +73,7 @@ import {connect} from "dva"
         </div>
     )
 }
-export default connect(state=>state.info)(Login) 
+export default connect(state=>state.info)(Login)
 
 
 

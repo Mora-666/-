@@ -21,6 +21,7 @@ export function _onCreate() {
   });
   
   app.model({ namespace: 'info', ...(require('D:/back-stag/src/models/info.js').default) });
+app.model({ namespace: 'pIndex', ...(require('D:/back-stag/src/pages/main/product/models/pIndex.js').default) });
   return app;
 }
 

@@ -1,11 +1,11 @@
 import {routerRedux} from 'dva';
 import * as api from "../utils/getpro"
 export default {
-    namespace: 'info', 
+    namespace: 'info',
     state: {
         userName: "王俊凯",
         password:"",
-        list:[], 
+        list:[],
         isEnter:false,
     },
     reducers: {
@@ -23,16 +23,15 @@ export default {
     effects: {
         *submitHandle(payload,{call,put}){
             const result = yield call(api.getManager,payload.payload);
-            console.log(result);
             yield put({
                 type:"save",
                 payload:{
                     list:result,
                     isEnter:true
-                }   
+                }
             })
-            localStorage.setItem("token",JSON.stringify(result.data.token));
-            yield put(routerRedux.push('/'));
+            localStorage.setItem("token",result.data.token);
+            yield put(routerRedux.push('/main/product/'));
         },
     }
 }
