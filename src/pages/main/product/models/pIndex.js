@@ -35,7 +35,9 @@ export default {
       // 新增商品：
       // http://img3.imgtn.bdimg.com/it/u=1107263072,1224997471&fm=26&gp=0.jpg
       *addPro(payload,{call,put}){
+        console.log(payload);
         const result = yield call(api.setProduct,payload.payload);
+        console.log(result);
         yield put(routerRedux.push("/main/product"));
       },
       //获取商品分类：
@@ -59,7 +61,7 @@ export default {
       *alterPro({payload},{call,put}){
         console.log(payload);
         console.log(payload.id);
-        const result = yield call(api.alterProduct,payload.id);
+        const result = yield call(api.alterProduct,payload);
         console.log(result);
       }
     }

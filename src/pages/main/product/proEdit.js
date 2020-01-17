@@ -20,8 +20,7 @@ useEffect(()=>{
     }
   });
 }) */
-// 把商品分类写死：
-const productCategory = "5ddd23616b7fee05a958e330";
+
 
   return (
     <div className = "addNew">
@@ -81,24 +80,25 @@ const productCategory = "5ddd23616b7fee05a958e330";
           })
         }}/>
       </div>
-      {/* 商品分类没有加入到修改中，只是个展示 */}
-    {/*   <div className = {proStyle.comm}>
+
+     <div className = {proStyle.comm}>
         <p>商品分类</p>
         <select id = "select" onChange = {(e)=>{
-          let item = document.getElementById("select");
-          let id = item.options[item.selectedIndex].value;
+          console.log("没有传递值");
+          /* let item = document.getElementById("select");
+          let id = item.options[item.selectedIndex].value; */
         }}>
-          <option style= {{display:"none"}}>请选择商品分类</option>
-          {props.categories.map((item)=>{
+         <option style= {{display:"none"}}>请选择商品分类</option>
+   {/*          {props.categories.map((item)=>{
           return(  <option key = {item._id} value= {item._id}>{item.name}</option>)
-          })}
+          })}*/}
         </select>
-      </div> */}
+      </div>
       <Button type="primary" block onClick = {()=>{
         props.dispatch({
           type:"proData/alterPro",
           payload:{
-            name,price,descriptions,coverImg,quantity,productCategory,
+            name,price,descriptions,coverImg,quantity,
             id,
           }
         })

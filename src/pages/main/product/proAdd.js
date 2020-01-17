@@ -14,14 +14,12 @@ function AddNew(props){
   const [productCategory,setProid] = useState("");
 
 
-// 首先获取商品分类的ID:
+// 首先获取商品分类列表:
   useEffect(()=>{
-    dispatch({
+  /*   dispatch({
       type:"proData/getCategory",
-      payload:{
-        per:10
-      }
-    })
+      payload:{}
+    }) */
   })
   return(
     <div className = "addNew">
@@ -59,9 +57,10 @@ function AddNew(props){
       <div className = {proStyle.comm}>
         <p>商品分类</p>
         <select id = "select" onChange = {(e)=>{
-          let item = document.getElementById("select");
+          console.log("维护中");
+        /*   let item = document.getElementById("select");
           let id = item.options[item.selectedIndex].value;
-          setProid(id);
+          setProid(id); */
         }}>
           <option style= {{display:"none"}}>请选择商品分类</option>
           {props.categories.map((item)=>{
@@ -70,10 +69,10 @@ function AddNew(props){
         </select>
       </div>
       <Button type="primary" block onClick = {()=>{
-        props.dispatch({
+        dispatch({
           type:"proData/addPro",
           payload:{
-            name,price,descriptions,coverImg,quantity,productCategory
+            name,price,descriptions,coverImg,quantity
           }
         })
       }}>确定</Button>

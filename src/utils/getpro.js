@@ -16,7 +16,7 @@ export const setProduct = (params)=>{
 export const alterProduct = (params,id)=>{
   return API.PUT('/api/v1/admin/products/'+id,params);
 }
-// 获取商品分类ID：
+// 获取商品分类列表：
 export const getCates = (params)=>{
   return API.GET('/api/v1/admin/product_categories',params);
 }
