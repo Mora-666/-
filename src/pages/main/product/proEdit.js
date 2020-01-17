@@ -9,8 +9,7 @@ function proEdit(props) {
   // const list = props.location.state.data;
   const {name,descriptions,quantity,price,coverImg,id} = props;
   // const [proname,setProname]= useState(name);
-  console.log(props);
-  const deliver= {};
+
 /* // 首先获取商品分类的ID:
 useEffect(()=>{
   dispatch({

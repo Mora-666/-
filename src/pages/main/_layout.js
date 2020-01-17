@@ -43,7 +43,7 @@ const { Header, Content, Sider } = Layout;
           >
             <Menu.Item key="1"><Link to = "/main/product/">商品列表</Link></Menu.Item>
             <Menu.Item key="2"><Link to = "/main/product/proAdd">新增商品信息</Link></Menu.Item>
-            <Menu.Item key="3">商品分类列表</Menu.Item>
+            <Menu.Item key="3"><Link to = "/main/product/proType">商品分类列表</Link></Menu.Item>
             <Menu.Item key="4">新增商品分类信息</Menu.Item>
           </SubMenu>
           <SubMenu

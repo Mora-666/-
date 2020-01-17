@@ -50,7 +50,7 @@ const routes = [
           {
             component: () =>
               React.createElement(
-                require('d:/manager/-/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+                require('D:/manager/-/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
                   .default,
                 { pagesPath: 'src/pages', hasRoutesInConfig: false },
               ),
@@ -65,7 +65,7 @@ const routes = [
           {
             component: () =>
               React.createElement(
-                require('d:/manager/-/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+                require('D:/manager/-/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
                   .default,
                 { pagesPath: 'src/pages', hasRoutesInConfig: false },
               ),
@@ -98,9 +98,14 @@ const routes = [
             component: require('../main/product/proEdit.js').default,
           },
           {
+            path: '/main/product/proType',
+            exact: true,
+            component: require('../main/product/proType.js').default,
+          },
+          {
             component: () =>
               React.createElement(
-                require('d:/manager/-/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+                require('D:/manager/-/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
                   .default,
                 { pagesPath: 'src/pages', hasRoutesInConfig: false },
               ),
@@ -110,7 +115,7 @@ const routes = [
       {
         component: () =>
           React.createElement(
-            require('d:/manager/-/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+            require('D:/manager/-/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
               .default,
             { pagesPath: 'src/pages', hasRoutesInConfig: false },
           ),
@@ -120,7 +125,7 @@ const routes = [
   {
     component: () =>
       React.createElement(
-        require('d:/manager/-/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+        require('D:/manager/-/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
           .default,
         { pagesPath: 'src/pages', hasRoutesInConfig: false },
       ),

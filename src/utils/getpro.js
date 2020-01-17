@@ -13,8 +13,8 @@ export const setProduct = (params)=>{
   return API.POST('/api/v1/admin/products',params);
 }
 //修改商品信息
-export const alterProduct = (params,id)=>{
-  return API.PUT('/api/v1/admin/products/'+id,params);
+export const alterProduct = (params)=>{
+  return API.PUT('/api/v1/admin/products/'+params.id,params);
 }
 // 获取商品分类列表：
 export const getCates = (params)=>{

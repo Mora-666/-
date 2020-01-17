@@ -25,6 +25,7 @@ export default {
     effects:{
       *dataProduct(payload,{call,put}){
         const result = yield call(api.getProduct,payload.payload);
+        console.log(result);
         yield put({
           type:"savePro",
           payload:{
@@ -35,9 +36,7 @@ export default {
       // 新增商品：
       // http://img3.imgtn.bdimg.com/it/u=1107263072,1224997471&fm=26&gp=0.jpg
       *addPro(payload,{call,put}){
-        console.log(payload);
         const result = yield call(api.setProduct,payload.payload);
-        console.log(result);
         yield put(routerRedux.push("/main/product"));
       },
       //获取商品分类：
@@ -46,7 +45,8 @@ export default {
         yield put({
           type:"saveCategory",
           payload:{
-            categories:result.data.categories,
+            categories:result.data,
+
           }
         })
       },
@@ -54,15 +54,13 @@ export default {
       *delPro({payload},{call,put}){
         const result = yield call(api.deletePro,payload.id);
         yield put({
-          type:"savePro"
+          type:"saveProp"
         })
       },
       // 修改商品信息：
       *alterPro({payload},{call,put}){
-        console.log(payload);
-        console.log(payload.id);
         const result = yield call(api.alterProduct,payload);
-        console.log(result);
+        yield put(routerRedux.push("/main/product"));
       }
     }
 }
