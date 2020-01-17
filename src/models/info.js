@@ -31,7 +31,7 @@ export default {
                 }
             })
             localStorage.setItem("token",result.data.token);
-            yield put(routerRedux.push('/main/product/'));
+            yield put(routerRedux.push('/main/product'));
         },
     }
 }

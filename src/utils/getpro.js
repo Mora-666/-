@@ -14,5 +14,13 @@ export const setProduct = (params)=>{
 }
 //修改商品信息
 export const alterProduct = (params,id)=>{
-  return API.PUT('/api/v1/admin/products'+id,params);
+  return API.PUT('/api/v1/admin/products/'+id,params);
+}
+// 获取商品分类ID：
+export const getCates = (params)=>{
+  return API.GET('/api/v1/admin/product_categories',params);
+}
+// 删除商品
+export const deletePro = (id)=>{
+  return API.DELETE('/api/v1/admin/products/'+ id);
 }

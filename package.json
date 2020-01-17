@@ -18,6 +18,7 @@
   "homepage": "https://github.com/zq320/back-stag#readme",
   "dependencies": {
     "axios": "^0.19.0",
+    "umi": "^2.13.1",
     "umi-plugin-react": "^1.14.10"
   }
 }

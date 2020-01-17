@@ -1,13 +1,16 @@
 // 商品列表页：
 import {connect} from "dva"
-import { Button,Table } from 'antd';
+import { Button,Table, Popconfirm,Input, InputNumber,Form } from 'antd';
 import {useEffect} from "react";
 import proSty from "./product.css"
+import router from "umi/router"
+
 function Product(props){
 // console.log(props);
 const ButtonGroup = Button.Group;
   const {dispatch} = props;
   const {list} = props;
+  const txt = '你确定要删除此项吗？';
   useEffect(()=>{
     dispatch({
       type:"proData/dataProduct",
@@ -46,8 +49,39 @@ const ButtonGroup = Button.Group;
       dataIndex:'handle',
       render: text =>
       <ButtonGroup>
-      <Button type="primary"> 修改</Button>
-      <Button type="danger"> 删除</Button>
+      <Button type="primary" onClick = {()=>{
+        let ind = 0;
+      list.map((item,i)=>{
+          if(item._id == text){
+            ind = i;
+          }
+        });
+        console.log(list[ind]);
+        dispatch({
+          type:"proData/savePro",
+          payload:{
+            name:list[ind].name,
+            descriptions:list[ind].descriptions,
+            quantity:list[ind].quantity,
+            price: list[ind].price,
+            coverImg: list[ind].coverImg,
+            id:list[ind]._id,
+          }
+        })
+        router.push({ pathname:"/main/product/proEdit"});
+      }}> 修改</Button>
+      {/* state:{data:list[ind]} */}
+      <Popconfirm placement="top" title={txt} onConfirm={()=>{
+        dispatch({
+          type:"proData/delPro",
+          payload:{
+            id:text
+          }
+        })
+      }} okText="Yes" cancelText="No">
+        <Button type="danger"> 删除</Button>
+      </Popconfirm>
+
     </ButtonGroup>
     },
        {
@@ -55,7 +89,7 @@ const ButtonGroup = Button.Group;
       dataIndex: 'proCategory',
     },
   ];
-let data = [];
+const data = [];
 list.map((item,index)=>{
 data.push({
     key:item._id,
